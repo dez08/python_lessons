@@ -9,4 +9,4 @@ class Building:
 
 for i in range(40):
     bld = Building(i + 1)
-    print(f'Объект № {bld.total} в классе "Building"')
+    print(f'Объект {bld} № {bld.total} в классе "Building"')
