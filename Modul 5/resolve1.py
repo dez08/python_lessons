@@ -7,11 +7,11 @@ class House:
         if new_floor > self.number_of_floors or new_floor < 1:
             print('Такого этажа не существует.')
         else:
-            for i in range(new_floor):
-                print(i + 1)
+            for i in range(1, new_floor + 1):
+                print(i)
                 import time
                 time.sleep(0.5)
-        print(f'Вы прибыли на {new_floor} этаж {self.name}.')
+            print(f'Вы прибыли на {new_floor} этаж {self.name}.')
 
 
 house1 = House('ЖК Эльбрус', 30)
