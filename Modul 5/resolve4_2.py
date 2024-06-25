@@ -7,6 +7,6 @@ class Building:
         self.total = total
 
 
-for i in range(40):
-    locals()['bld' + str(i)] = Building(i + 1)
+for i in range(1, 40 + 1):
+    locals()['bld' + str(i)] = Building(i)
     print(f'Объект {locals()['bld' + str(i)]} № {locals()['bld' + str(i)].total} в классе "Building"')
