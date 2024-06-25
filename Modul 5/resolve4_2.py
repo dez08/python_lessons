@@ -9,4 +9,4 @@ class Building:
 
 for i in range(40):
     locals()['bld' + str(i)] = Building(i + 1)
-    print(f'Объект № {locals()['bld' + str(i)].total} в классе "Building"')
+    print(f'Объект {locals()['bld' + str(i)]} № {locals()['bld' + str(i)].total} в классе "Building"')
