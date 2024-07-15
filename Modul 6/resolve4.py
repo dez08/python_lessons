@@ -62,12 +62,17 @@ class Triangle(Figure):
     def __init__(self, __color, __sides):
         super().__init__(__color, __sides)
         self.sides_count = 3
+        a = __sides
+        b = []
+        for _ in range(self.sides_count):
+            b.append(a)
+        self.__sides = b
         p = sum(self.__sides) / 2
         self.__height = (2 * sqrt(p * (p - self.__sides[0]) * (p - self.__sides[1]) * (p - self.__sides[2]))) / \
                         self.__sides[0]
 
     def get_square(self):
-        return 0.5 * self.__sides * self.__height
+        return 0.5 * self.__sides[0] * self.__height
 
 
 class Cube(Figure):
@@ -81,6 +86,9 @@ class Cube(Figure):
 
 circle1 = Circle((200, 200, 100), 10)  # (Цвет, стороны)
 cube1 = Cube((222, 35, 130), 6)
+
+
+
 
 # Проверка на изменение цветов:
 circle1.set_color(55, 66, 77)  # Изменится
