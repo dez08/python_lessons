@@ -14,15 +14,15 @@ def personal_sum(numbers):
 
 def calculate_average(numbers):
     try:
-        result, incorrect_data = personal_sum(numbers)
-        total = result / len(numbers)
+        total, incorrect_data = personal_sum(numbers)
+        result = total / len(numbers)
     except ZeroDivisionError:
         return 0
     except TypeError:
         print('В numbers записан некорректный тип данных')
         return None
 
-    return total
+    return result
 
 
 print(f'Результат 1: {calculate_average("1, 2, 3")}') # Строка перебирается, но каждый символ - строковый тип
