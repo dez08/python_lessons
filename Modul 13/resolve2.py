@@ -1,4 +1,4 @@
-# Домашнее задание по теме "Методы отправки сообщений".
+# Домашнее задание по теме "Хендлеры обработки сообщений".
 
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
