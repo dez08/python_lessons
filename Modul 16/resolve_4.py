@@ -29,7 +29,7 @@ def welcome() -> List[User]:
 @app.post('/user/{username}/{age}')
 def welcome_id_user(username: str = Path(min_length=5, max_length=20, description='Enter username', example='UrbanUser'),
                           age: int = Path(ge=18, le=120, description='Enter Age', example='24')) -> User:
-    user_id = len(users) + 1
+    user_id = users[-1].id + 1 if users else 1
     user = User(id=user_id, username=username, age=age)
     users.append(user)
     return user
