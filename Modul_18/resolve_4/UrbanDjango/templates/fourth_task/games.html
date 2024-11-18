@@ -9,7 +9,7 @@
 {% block content %}
     <ul>
         {% for game in games_list %}
-            <li>{{ game }}  <button>Приобрести</button></li>
+            <li><img src={{photo}} width="70" height="100"> {{ game }}  <button>Приобрести</button></li>
         {% endfor %}
     </ul>
     <button><a href="/main">Главная страница</a></button>
