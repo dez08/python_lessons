@@ -9,14 +9,12 @@ def platform(request):
 
 def games(request):
     page_name = "Игры"
-    games_list = ["Atomic Heart",
-                            "Cyberpunk 2077",
-                            "PayDay 2"]
-    buy = "Купить"
+    games_list = [["Atomic Heart", "/photo/Atomic_Heart_Art.jpg"],
+                  ["Cyberpunk 2077", "/photo/Cyberpunk_2077.jpg"],
+                  ["PayDay 2", "/photo/Payday2.jpg"]]
     context = {
         'title': page_name,
         'games_list': games_list,
-        'buy': buy,
     }
     return render(request, 'fourth_task/games.html', context)
 
