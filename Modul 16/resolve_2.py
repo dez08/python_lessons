@@ -21,7 +21,7 @@ async def welcome_user(user_id: int = Path(ge=1, le=100, description='Enter User
     return f'Вы вошли как пользователь № {user_id}'
 
 
-@app.get('/user')
+@app.get('/user/{username}/{age}')
 async def welcome_id_user(username: str = Path(min_length=5, max_length=20, description='Enter username', example='UrbanUser'),
                           age: int = Path(ge=18, le=120, description='Enter Age', example='24')) -> str:
     return f'Информация о пользователе. Имя: {username}, Возраст: {age}'
