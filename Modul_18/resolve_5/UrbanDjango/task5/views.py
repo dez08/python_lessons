@@ -18,7 +18,7 @@ def sign_up_by_django(request):
             password = form.cleaned_data['password']
             repeat_password = form.cleaned_data['repeat_password']
             age = form.cleaned_data['age']
-            info = {'info': 'Регистрация'}
+            info = {}
             context = {'info': info, 'form': form}
             if password == repeat_password and age > 18 and username not in users:
                 return HttpResponse(f'Приветствуем, {username}!')
