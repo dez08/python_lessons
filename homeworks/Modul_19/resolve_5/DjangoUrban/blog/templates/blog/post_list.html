@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+   <html>
+    <head>
+        <style>
+            .pagination {
+                margin: 20px 0;
+            }
+            .pagination span {
+                margin-right: 5px;
+            }
+            .items-per-page {
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+
+   <head>
+       <title>Blog Posts</title>
+   </head>
+   <body>
+       <h1>Blog Posts</h1>
+            <form method="get" class="items-per-page">
+                <label for="items_per_page">Элементов на странице:</label>
+                <select name="items_per_page" id="items_per_page" onchange="this.form.submit()">
+                    <option value="5" {% if items_per_page|add:"0" == 5 %}selected{% endif %}>5</option>
+                    <option value="10" {% if items_per_page|add:"0" == 10 %}selected{% endif %}>10</option>
+                    <option value="15" {% if items_per_page|add:"0" == 15 %}selected{% endif %}>15</option>
+       </select>
+   </form>
+       {% for post in posts %}
+           <h2>{{ post.title }}</h2>
+           <p>{{ post.content }}</p>
+           <p>Posted on {{ post.created_at }}</p>
+       {% endfor %}
+
+       <div class="pagination">
+           <span class="step-links">
+               {% if posts.has_previous %}
+                   <a href="?page=1">&laquo; первый</a>
+                   <a href="?page={{ posts.previous_page_number }}">предыдущий</a>
+               {% endif %}
+
+               <span class="current">
+                   Страница {{ posts.number }} из {{ posts.paginator.num_pages }}.
+               </span>
+
+               {% if posts.has_next %}
+                   <a href="?page={{ posts.next_page_number }}">следующий</a>
+                   <a href="?page={{ posts.paginator.num_pages }}">последний &raquo;</a>
+               {% endif %}
+           </span>
+       </div>
+   </body>
+   </html>
